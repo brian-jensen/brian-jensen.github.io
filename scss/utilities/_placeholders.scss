@@ -1,0 +1,93 @@
+//══════════════════════════════════════
+//    				 PLACEHOLDERS
+//══════════════════════════════════════
+%base-styles {
+  font-size: $base__font-size;
+  font-family: $font-family--primary;
+  font-weight: $font-weight--thin;
+}
+
+%relative {
+  position: relative;
+}
+
+%absolute {
+  position: absolute;
+}
+
+%hidden {
+  overflow: hidden;
+}
+
+%display-none {
+  display: none;
+}
+
+%grow {
+  flex-grow: 1;
+}
+
+%full-width {
+  width: 100%;
+}
+
+%full-height {
+  height: 100%;
+}
+
+%no-line-height {
+  line-height: 0;
+}
+
+%pointer {
+  cursor: pointer;
+}
+
+%block-element {
+  display: block;
+}
+
+%full-auto {
+  margin: auto;
+}
+
+%flex-element {
+  display: flex;
+}
+
+%inline-block-element {
+  display: inline-block;
+}
+
+%inline-flex-element {
+  display: inline-flex;
+}
+
+%center-element {
+  margin: 0 auto;
+}
+
+%center-text {
+  text-align: center;
+}
+
+%rounded-corners {
+  border-radius: $border--rounded-corners;
+}
+
+%rounded-corners-sm {
+  border-radius: 5px;
+}
+
+%letter-spacing {
+  letter-spacing: 1px;
+}
+
+%circle {
+  border-radius: $border--circle;
+}
+
+%background {
+  background-color: rgba($black, .4);
+}
+

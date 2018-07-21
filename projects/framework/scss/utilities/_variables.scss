@@ -1,0 +1,104 @@
+//══════════════════════════════════════
+//					 GLOBAL VARIABLES
+//══════════════════════════════════════
+
+// Font Stacks
+$font-url--google        : 'http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900';
+$font-family--primary    : 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-family--secondary  : 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+// Font Weights
+$font-weight--thin       : 100;
+$font-weight--light      : 300;
+$font-weight--medium     : 400;
+$font-weight--bold       : 700;
+$font-weight--ultra-bold : 900;
+
+// Typography Defaults
+$base__font-size    : 18px;
+$base__line-height  : 26px;
+$base__letter-space : 1px;
+
+// Descriptive Base Colors
+$white  : #fff;
+$black  : #000;
+$gray   : #808080;
+$viking : #58e1c1;
+
+// Descriptive Button Colors
+$malibu  				: #51ddfc;
+$emerald        : #63cc82;
+$sunglo         : #e4757a;
+$coral          : #fd7856;
+$purple-majesty : #927bc1;
+
+// Descriptive Grid colors
+$french-lilac 	 : #deb2ee;
+$anakiwa			   : #7ee6fd;
+$vista-blue			 : #88d9a0;
+$shakespeare	   : #3fabca;
+$sea-pink        : #ec9fa3;
+$vivid-tangerine : #fd9f85;
+$riptied				 : #80e8d1;
+
+// Color Usage
+$color-primary   : $viking;
+$color-secondary : $malibu;
+$color-accent    : $emerald;
+$color-shadow    : rgba($black, .2);
+
+// Color Palette Modifiers
+$color-palettes: (
+	gray: (
+		xx-light : lighten($gray, 30%),
+		x-light  : lighten($gray, 20%),
+	  light    : lighten($gray, 8%),
+	  base     : $gray,
+	 	dark     : darken($gray, 8%),
+	 	x-dark   : darken($gray, 20%),
+		xx-dark  : darken($gray, 30%)
+	),
+	black: (
+		light    : lighten($black, 10%),
+		base     : $black,
+		dark     : darken($black, 10%)
+	)
+);
+
+// UI Colors
+$ui-colors: (
+	default : $malibu,
+	success : $emerald,
+	error   : $sunglo,
+	warning : $coral,
+	info    : $purple-majesty
+);
+
+$border--rounded-corners : 5px;
+
+// Grid Global variables
+$g-col-count				 : 12;
+$g-col-width				 : 50px;
+$g-gutter-width			 : 8px;
+$container-max-width : 1150px;
+
+$grid-colors:
+	darken($sea-pink, 10%),						// .grid__col--1
+	lighten($vivid-tangerine, 10%),		// .grid__col--2
+	$french-lilac, 										// .grid__col--3
+	$anakiwa,													// .grid__col--4
+	$vista-blue,											// .grid__col--5
+	$shakespeare,											// .grid__col--6
+	$sea-pink,												// .grid__col--7
+	$vivid-tangerine,									// .grid__col--8
+	darken($french-lilac, 10%),				// .grid__col--9
+	lighten($anakiwa, 10%),						// .grid__col--10
+	darken($vista-blue, 10%),					// .grid__col--11
+	$riptied													// .grid__col--12
+;
+
+// Media Query Map
+$breakpoints: (
+  tablet  : 768px,
+  desktop : 1200px,
+);

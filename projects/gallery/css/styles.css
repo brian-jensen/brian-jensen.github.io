@@ -1,0 +1,154 @@
+/**********************************
+GENERAL PRESETS
+***********************************/
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  overflow-y: scroll;
+}
+
+body {
+  margin: 0;
+  background-image: url("../images/non-gallery/random_grey_variations.png");
+  font-family: 'Josefin Slab', serif;
+  font-size: 14px;
+  font-weight: 100;
+}
+
+#wrapper {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+input {
+  display: block;
+  width: 90%;
+  height: 40px;
+  margin: 30px auto 0;
+  padding-left: 35px;
+  border-radius: 5px;
+  background-color: #f0f8ff;
+  background-image: url('../images/non-gallery/search-indicator-magnifying-glass.svg');
+  background-repeat: no-repeat;
+  background-position: 5px 50%;
+  font-size: 1rem;
+}
+
+#no-matches {
+  display: none;
+  text-align: center;
+  color: #fff;
+  text-shadow: 1px 1px 4px #000;
+}
+
+a {
+  text-decoration: none;
+  outline: none;
+}
+
+li {
+  list-style: none;
+}
+
+ul {
+  padding: 0;
+}
+
+/**********************************
+GALLERY
+***********************************/
+
+#gallery ul {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 10px;
+}
+
+#gallery li {
+  flex-basis: 48.5%;
+}
+
+#gallery {
+  text-align: center;
+  color: #4a4a4a;
+}
+
+#gallery div {
+  text-transform: none;
+  font-weight: 300;
+}
+
+#gallery div img {
+  max-width: 100%;
+  margin: 3px auto;
+  border-radius: 3px;
+  box-shadow: 0 0 15px #222;
+}
+
+#gallery div img:hover {
+  transform: rotate(1deg);
+  box-shadow: 0 0 10px #777;
+}
+
+/**********************************
+FANCYBOX 3 STYLE OVERIDES
+***********************************/
+
+.fancybox-is-open .fancybox-bg {
+  opacity: 0.7;
+}
+
+.fancybox-caption-wrap {
+  display: flex;
+  margin: auto;
+}
+
+.fancybox-caption {
+  flex: 1;
+  max-width: 600px;
+  margin: auto;
+  letter-spacing: .25em;
+  border: none;
+}
+
+.fancybox-arrow {
+  opacity: .8;
+}
+
+/**********************************
+TABLET MEDIA QUERIES
+***********************************/
+
+@media (min-width: 768px) {
+  input {
+    width: 45%;
+  }
+  #gallery {
+    padding: 0 30px;
+  }
+  #gallery li {
+    flex-basis: 33%;
+  }
+  #gallery div img {
+    margin: 15px auto;
+  }
+  .fancybox-image, .fancybox-spaceball {
+    max-height: 94%;
+  }
+}
+
+/**********************************
+DESKTOP MEDIA QUERIES
+***********************************/
+
+@media (min-width: 1024px) {
+  input {
+    width: 47%;
+  }
+  #gallery li {
+    flex-basis: 25%;
+  }
+}

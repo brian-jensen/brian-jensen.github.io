@@ -1,0 +1,76 @@
+//══════════════════════════════════════
+//         FLEXBOX GRID SYSTEM
+//══════════════════════════════════════
+
+.container {
+  @include block-centered(block);
+  @include row-spacing(em(5px));
+  @include column-spacing($padding-left: em(25px));
+  max-width: $container-max-width;
+  @include mq(tablet) {
+    margin-bottom: em(75px);
+  }
+}
+
+.grid__row {
+  @include flex-container(flex, space-between, wrap);
+  @include row-spacing($padding-top: em(22px));
+}
+
+[class*="grid__col--"] {
+  flex-basis: 100%;
+
+  &.theme__colors {
+    @include row-spacing($margin-top: em(3px),$padding-top: em(13px));
+    @include column-spacing($padding-left: em(15px), $padding-right: null);
+    @extend %rounded-corners;
+    font-weight: $font-weight--medium;
+    color: palette(gray, dark);
+    font-size: em(15px);
+    @include mq(tablet) {
+      padding-left: 0;
+      text-align: center;
+
+      &.centered {
+        margin: 0 auto;
+      }
+    }
+  }
+}
+@mixin grid-background-color {
+  @each $current-color in $grid-colors {
+    $i: index($grid-colors, $current-color);
+
+    &--#{$i}.theme__colors {
+      background-color: $current-color;
+    }
+  }
+}
+@mixin g-columns {
+  @for $i from 1 through $g-col-count {
+    $context: g-context($g-col-width, $g-col-count ,$g-gutter-width) !global;
+    $target: ($g-col-width * $i) + ($g-gutter-width * ($i - 1));
+    // Generate column modifier classes
+    &--#{$i} {
+      flex-basis: percentage($target / $context);
+    }
+  }
+}
+
+.grid__col {
+  @include grid-background-color;
+  @include mq(tablet) {
+    @include g-columns;
+  }
+}
+
+.grid__col--8 > .card {
+  @include row-spacing(em(47px),null);
+}
+
+.card {
+  @extend %condensed;
+  @include mq(tablet) {
+    @include column-spacing(0px, 0px, 0px, 40px);
+  }
+}

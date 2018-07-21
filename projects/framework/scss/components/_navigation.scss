@@ -1,0 +1,37 @@
+//══════════════════════════════════════
+//          NAVIGATION STYLES
+//══════════════════════════════════════
+
+.nav {
+  @include flex-container(flex, center, $dir: column);
+  @include row-spacing($margin-bottom: em(30px));
+  @include mq(tablet) {
+    @include row-spacing(em(40px));
+    @include flex-container(inline-flex, center, $dir: row);
+  }
+  @include e(item) {
+    @extend %center-text;
+
+    & a {
+      @extend %nav-item-link;
+      @include row-spacing($padding-top: em(14px));
+      @include mq(tablet) {
+        @include column-spacing(em(21px));
+      }
+
+      &:hover {
+        background-color: $color-primary;
+        color: $white;
+      }
+    }
+  }
+}
+
+.link {
+  @extend %content-link;
+
+  &:hover {
+    color: darken($color-secondary, 5%);
+    text-shadow: 1px 1px $color-shadow;
+  }
+}

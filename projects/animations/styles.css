@@ -1,0 +1,445 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-family: 'Roboto Slab', serif;
+  font-weight: 300;
+  color: #111;
+  background: #edeff0;
+  background-image: url(svgs/background.svg);
+}
+
+#container {
+  max-width: 960px;
+  background: #fff;
+  margin: 0 auto;
+  padding: 25px 25px 0;
+  height: 100%;
+}
+
+p {
+  max-width: 350px;
+  margin: 25px auto 0;
+  line-height: 2em;
+  text-align: left;
+  font-size: 14px;
+}
+
+a {
+  text-decoration: none;
+  color: #39add1;
+  font-weight: 700;
+}
+
+a:hover {
+  color: #111;
+}
+
+header {
+  padding-top: 15px;
+  margin: 10px auto 40px;
+}
+
+header nav {
+  padding-bottom: 50px;
+  text-align: left;
+}
+
+header nav ul li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+section h1 {
+  font-size: 24px;
+  margin-top: 30px;
+}
+
+main h2 {
+  font-size: 22px;
+  margin-top: 35px;
+}
+
+footer {
+  width: 100%;
+  margin-top: 50px;
+  padding-bottom: 30px;
+  color: #ba8058;
+}
+
+ul {
+  list-style: none;
+}
+
+.nav li {
+  display: inline;
+  margin-right: 6px;
+}
+
+.nav li:last-child,
+.coat-colors .corgi-stone {
+  margin-right: 0;
+}
+
+.nav a {
+  font-size: 14px;
+}
+
+.nav-heart,
+.nav-location,
+.nav-contact {
+  transform: rotate(0deg) scale(1) rotateY(0deg);
+  fill: #39add1;
+}
+
+.corgi-template {
+  display: none;
+}
+
+.logo-background {
+  fill: #BA8058;
+}
+
+.logo-text {
+  fill: #eaaa7f;
+  display: none;
+}
+
+.logo-heading {
+  text-transform: uppercase;
+  font-size: 16px;
+  letter-spacing: 1px;
+  color: #eaaa7f;
+}
+
+.logo-left-pad,
+.logo-center-pad,
+.logo-right-pad,
+.logo-bottom-pad {
+  transform: translate3d(0,0,0) scale(1);
+  fill: #F4C6A6;
+}
+
+.coat-colors {
+  margin: 25px auto;
+  padding: 0 25px 15px;
+}
+
+.coat-colors svg {
+  transform: rotate(-11deg) scale(1.2);
+  margin: 0 auto;
+  padding-left: 25px;
+}
+
+.coat-colors span {
+  display: block;
+  color: #b97f5b;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.corgi-sable {
+  color: #b97f5b;
+}
+
+.corgi-fawn {
+  color: #e9aa82;
+}
+
+.corgi-red {
+  color: #834b29;
+}
+
+.corgi-stone {
+  color: #52595e;
+}
+
+/* ANIMATIONS */
+
+@keyframes heart-beat {
+  0% {
+    transform: scale(0.9);
+  }
+  10% {
+    transform: scale(0.8);
+  }
+  20% {
+    transform: scale(0.7);
+  }
+  30% {
+    transform: scale(0.6);
+  }
+  40% {
+    transform: scale(0.5);
+  }
+  50% {
+    transform: scale(0.6);
+  }
+  60% {
+    transform: scale(0.7);
+  }
+  70% {
+    transform: scale(0.8);
+  }
+  80% {
+    transform: scale(0.9);
+  }
+  90% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+.home:hover .nav-heart {
+  transform-origin: center center;
+  animation: heart-beat 1s ease-out backwards infinite;
+  animation-delay: .1s;
+  fill: #e9aa82;
+}
+.home:hover a {
+  color: #e9aa82;
+}
+
+@keyframes tack-wiggle {
+  0% {
+    transform: rotate(-10deg);
+  }
+  10% {
+    transform: rotate(-20deg);
+  }
+  20% {
+    transform: rotate(-30deg);
+  }
+  30% {
+    transform: rotate(-20deg);
+  }
+  40% {
+    transform: rotate(-10deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  60% {
+    transform: rotate(10deg);
+  }
+  70% {
+    transform: rotate(20deg);
+  }
+  80% {
+    transform: rotate(30deg);
+  }
+  90% {
+    transform: rotate(20deg);
+  }
+  100% {
+    transform: rotate(10deg);
+  }
+}
+
+.visit-us:hover .nav-location {
+  transform-origin: center center;
+  animation: tack-wiggle 300ms ease-out backwards infinite;
+  animation-delay: 30ms;
+  fill: #834b29;
+}
+.visit-us:hover a {
+  color: #834b29;
+}
+
+@keyframes chat-bubble-rotate {
+  0% {
+    transform: rotateY(0deg);
+  }
+  10% {
+    transform: rotateY(36deg);
+  }
+  20% {
+    transform: rotateY(72deg);
+  }
+  30% {
+    transform: rotateY(108deg);
+  }
+  40% {
+    transform: rotateY(144deg);
+  }
+  50% {
+    transform: rotateY(180deg);
+  }
+  60% {
+    transform: rotateY(144deg);
+  }
+  70% {
+    transform: rotateY(108deg);
+  }
+  80% {
+    transform: rotateY(72deg);
+  }
+  90% {
+    transform: rotateY(36deg);
+  }
+  100% {
+    transform: rotateY(0deg);
+  }
+}
+
+.contact-us:hover .nav-contact {
+  transform-origin: center center;
+  animation: chat-bubble-rotate 1.2s ease-in-out backwards infinite;
+  fill: #52595e;
+}
+.contact-us:hover a {
+  color: #52595e;
+}
+
+@keyframes slide {
+	50% {
+		transform: translate3d(0,-10px,0);
+	}
+	80% {
+		transform: translate3d(0,10px,0);
+	}
+	100% {
+		transform: translate3d(0,0,0);
+	}
+} 
+
+@keyframes grow {
+	0% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(1.15);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
+.logo:hover {
+  cursor: pointer;
+}
+
+.pad-group * {
+  transform-origin: center center;
+}
+
+.logo:hover .logo-left-pad {
+	animation: slide .5s forwards, 
+             grow .6s ease-out forwards;
+}
+
+.logo:hover .logo-center-pad {
+	animation: slide .5s forwards, 
+		         grow .6s ease-out forwards;
+}
+
+.logo:hover .logo-right-pad {
+	animation: slide .5s forwards, 
+		         grow .6s ease-out forwards;
+}
+
+.logo:hover .logo-bottom-pad {
+	animation: slide .5s forwards, 
+		         grow .6s ease-out forwards;
+}
+
+.logo:hover .logo-left-pad {
+  animation-delay: .3s;  
+}
+
+.logo:hover .logo-center-pad {
+  animation-delay: .5s;  
+}
+
+.logo:hover .logo-right-pad {
+  animation-delay: .7s;  
+}
+
+.logo:hover .logo-bottom-pad {
+  animation-delay: .9s;  
+}
+
+/* MEDIA QUERIES */
+
+@media (min-width: 425px) {
+  .nav {
+    text-align: left;
+  }
+  .nav li {
+    margin-right: 30px;
+  }
+  .nav a {
+    font-size: 16px;
+    margin-left: 5px;
+  }
+  .home svg {
+    width: 15px;
+    height: 13px;
+  }
+  .visit-us svg {
+    width: 14px;
+    height: 14px;
+  }
+  .contact-us svg {
+    width: 15px;
+    height: 15px;
+    margin-bottom: -1px;
+  }
+  header {
+    margin-top: 85px;
+  }
+  .logo-text {
+    display: block;
+  }
+  .logo-heading {
+    display: none;
+  }
+  .logo {
+    transform: scale(1.2);
+  }
+  section h1 {
+    font-size: 32px;
+    margin: auto;
+  }
+  p {
+    margin: 35px auto;
+    padding-left: 5px;
+    font-size: 16px;
+  }
+  main {
+    margin: 75px auto;
+  }
+  main h2 {
+    font-size: 28px;
+  }
+  .coat-colors svg {
+    transform: rotate(-11deg) scale(1.5);
+    margin: 0 auto 25px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .coat-colors {
+    margin: 15px auto;
+  }
+  .corgi li {
+    display: inline-block;
+    margin-right: 30px;
+  }
+  .coat-colors svg {
+    transform: rotate(0) scale(1.2);
+    margin: 0 auto;
+    padding-left: 30px;
+  }
+  .coat-colors span {
+    margin: 0 auto;
+  }
+}

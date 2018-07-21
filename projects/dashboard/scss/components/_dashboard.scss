@@ -1,0 +1,60 @@
+//══════════════════════════════════════
+//              DASHBOARD STYLES
+//══════════════════════════════════════
+main {
+  height: 100%;
+}
+
+.dashboard-header {
+  height: 50px;
+  flex-wrap: nowrap;
+  @include mq(landscape) {
+    height: 65px;
+  }
+  .dashboard-heading {
+    @extend %grow;
+    margin: auto 20px;
+    h3 {
+      @extend %dashboard-h3;
+      @extend %center-text;
+      @include mq(landscape) {
+        font-size: 1.2em;
+        text-align: left;
+      }
+      @include mq(tablet) {
+        font-size: 1.3em;
+      }
+      @include mq(desktop) {
+        line-height: 0.5;
+        font-size: 1.5em;
+      }
+    }
+  }
+}
+
+.dashboard-search {
+  background-color: $alabaster;
+  border-left: $border--primary;
+  border-bottom: $border--primary;
+  @include flex-container(flex, center, $items: center);
+  @extend %full-width;
+  @include mq(landscape) {
+    @include column-spacing(null, null, 20px);
+    justify-content: flex-end;
+  }
+  input {
+    flex-basis: 70%;
+    @extend %input-defaults;
+    @include mq(landscape) {
+      flex-basis: 50%;
+      height: 40px;
+      background-size: 1rem 1rem;
+    }
+    @include mq(tablet) {
+      flex-basis: 45%;
+    }
+    @include mq(desktop) {
+      flex-basis: 40%;
+    }
+  }
+}

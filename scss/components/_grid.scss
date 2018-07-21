@@ -1,0 +1,12 @@
+//══════════════════════════════════════
+//                GRID STYLES
+//══════════════════════════════════════
+
+.container {
+  min-width: $container-min-width;
+  max-width: $container-max-width;
+  min-height: 100vh;
+  @extend %full-auto;
+}
+
+

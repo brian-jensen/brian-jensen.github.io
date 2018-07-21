@@ -1,0 +1,71 @@
+main {
+  margin: 100px auto;
+  background-color: rgba($black, .4);
+  max-width: $container-max-width;
+  padding-top: 15px;
+  @extend %rounded-corners;
+  .container {
+    max-width: $container-max-width;
+    h1 {
+      color:$emerald;
+      font-size: 1.5rem;
+      height: 2rem;
+      line-height: 1.8rem;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      @extend %full-width;
+      @extend %center-text;
+    }
+    #portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      grid-auto-rows: 245px;
+      grid-gap: 30px;
+      padding: 15px 30px 30px;
+      .item {
+        box-shadow: 0px 0px 1px 2px $emerald;
+          &[class*="item-"] {
+          background-size: 100% 100%;
+        }
+        @extend %hidden;
+        @extend %rounded-corners-sm;
+        .overlay {
+          padding: 10px;
+          display: inline-block;
+          transform: translateX(-100%);
+          border-radius: 5px;
+          background-color: rgba($black, 0.85);
+          color: $white;
+          transition: transform .4s ease-out;
+          @extend %full-width;
+          @extend %full-height;
+          @extend %center-text;
+          button {
+            background-color: $white;
+            color: $black;
+            transform: translateY(120px);
+            height: 25px;
+            border: none;
+            font-weight: $font-weight--thin;
+            @extend %pointer;
+            @extend %rounded-corners-sm;
+            &:hover, &:active {
+              background-color: $emerald;
+              color: $white;
+            }
+          }
+        }
+        &:hover .overlay {
+          transition: transform .8s;
+          transform: translateX(0);
+        }
+      }
+    }
+  }
+}
+
+.project {
+  font-size: $base__font-size - 4;
+  color: darken($white, 25%);
+  @extend %no-line-height;
+}

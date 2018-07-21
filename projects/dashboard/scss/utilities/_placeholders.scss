@@ -1,0 +1,171 @@
+//══════════════════════════════════════
+//    				 PLACEHOLDERS
+//══════════════════════════════════════
+%base-styles {
+  font-size: $base__font-size;
+  font-family: $font-family--primary;
+  font-weight: $font-weight--thin;
+}
+
+%header-base-style {
+  color: darken($white, 5%);
+  font-weight: $font-weight--thin;
+}
+
+%dashboard-h3 {
+  color: darken($dove-gray, 5%);
+  font-weight: $font-weight--medium;
+  font-size: $base__font-size - 2;
+  @include mq(tablet) {
+    font-size: $base__font-size;
+  }
+}
+
+%user-icon {
+  @extend %circle;
+  vertical-align: middle;
+  width: $base__font-size * 2;
+  height: $base__font-size * 2;
+}
+
+%dashboard-h3-caps {
+  @extend %dashboard-h3;
+  text-transform: uppercase;
+}
+
+%nav-icons {
+  width: 52px;
+  fill: $spun-pearl;
+  border: 3px solid $mulled-wine;
+  max-height: 100%;
+  @include row-spacing(null, null, 10px);
+  @include column-spacing(null, null, 10px);
+  &:hover {
+    fill: $white;
+    border-bottom: 3px solid $pastel-green;
+    @include mq(tablet) {
+      border: 3px solid $mulled-wine;
+      border-left: 3px solid $pastel-green;
+    }
+  }
+  @include mq(tablet) {
+    width: 72px;
+    @include column-spacing(null, null, 20px);
+  }
+}
+
+%form-focus {
+  transition: box-shadow linear .5s;
+  box-shadow: 1px 1px 3px $color-shadow;
+}
+
+%input-defaults {
+  height: 35px;
+  @extend %rounded-corners;
+  @include column-spacing(null, null, 5px);
+  border: $border--primary;
+  background-image: url('../icons/search-indicator-magnifying-glass.svg');
+  background-repeat: no-repeat;
+  background-size: 12px 12px;
+  background-position: 98% 50%;
+  transition: box-shadow ease-out .5s;
+  &::placeholder {
+    color: darken($white, 35%);
+    font-weight: $font-weight--thin;
+    font-size: $base__font-size - 4;
+    @include mq(landscape) {
+      font-size: .7rem;
+    }
+  }
+  &:focus {
+    @extend %form-focus;
+  }
+  @include mq(tablet) {
+    @include column-spacing(null, null, 10px);
+    background-size: 14px 14px;
+  }
+  &.invalid {
+    border-color: $color-error;
+    &::placeholder {
+      color: $color-error;
+    }
+  }
+}
+
+%switch-overides {
+  .switch-material.switch-light input~span a {
+    border: 1px solid $spun-pearl;
+    outline: 0;
+  }
+  .switch-material.switch-light input:checked~span a {
+    background: $white;
+    border: 1px solid $pastel-green;
+  }
+  .switch-material.switch-light input:checked~span {
+    background: rgba($pastel-green, 0.8);
+  }
+}
+
+%relative {
+  position: relative;
+}
+
+%grow {
+  flex-grow: 1;
+}
+
+%full-width {
+  width: 100%;
+}
+
+%no-line-height {
+  line-height: 0;
+}
+
+%pointer {
+  cursor: pointer;
+}
+
+%block-element {
+  display: block;
+}
+
+%flex-element {
+  display: flex;
+}
+
+%user-padding {
+  padding-left: 10px;
+}
+
+%inline-block-element {
+  display: inline-block;
+}
+
+%inline-flex-element {
+  display: inline-flex;
+}
+
+%center-element {
+  margin: 0 auto;
+}
+
+%center-text {
+  text-align: center;
+}
+
+%button-inset {
+  box-shadow: 0 0 3px 0 rgba($dove-gray, .8) inset;
+}
+
+%rounded-corners {
+  border-radius: $border--rounded-corners;
+}
+
+%circle {
+  border-radius: $border--circle;
+}
+
+%button-hover {
+  box-shadow: inset 3px 2px 3px darken($color-primary, 20%);
+}

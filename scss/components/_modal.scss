@@ -1,0 +1,193 @@
+//══════════════════════════════════════
+//              MODAL STYLES
+//══════════════════════════════════════
+
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  @extend %full-height;
+  background-color: rgba($black, 0.7);
+  z-index: 100;
+  @extend %display-none;
+  @extend %full-width;
+  .item-container {
+    @extend %absolute;
+    left: 15px;
+    right: 15px;
+    top: 0;
+    bottom: 0;
+    max-width: 580px;
+    min-width: 290px;
+    height: 450px;
+    color: $white;
+    background-color: rgba($black, .95);
+    z-index: 200;
+    padding: 15px;
+    box-shadow: 0px 0px 1px 2px $emerald;
+    border-radius: 5px;
+    @extend %full-auto;
+    @extend %center-text;
+    @extend %display-none;
+    h3 {
+      border-bottom: 1px dotted rgba($white, .2);
+      padding-bottom: 8px;
+      color: lighten($emerald, 12%);
+      font-weight: $font-weight--thin;
+      @extend %letter-spacing;
+      @include mq(tablet){
+        font-size: 1.25rem;
+      }
+    }
+    .description-container {
+      min-height: 125px;
+      margin-top: 10px;
+      .description {
+        font-weight: $font-weight--extra-thin;
+        font-size: $base__font-size - 3;
+        text-align: left;
+        line-height: 1rem;
+        @extend %letter-spacing;
+        @include mq(tablet){
+          font-size: $base__font-size;
+          line-height: 1.25rem;
+          margin: 15px;
+        }
+      }
+      @include mq(tablet) {
+        min-height: 100px;
+      }
+    }
+    sub {
+      font-style: italic;
+      color: darken($white, 15%);
+    }
+    ul {
+      display: flex;
+      justify-content: center;
+      li {
+        color: $black;
+        width: 40px;
+        height: 40px;
+        padding: 0 5px;
+        @include mq(tablet) {
+          width: 50px;
+          height: 50px;
+        }
+        .sass-logo {
+          padding-top: 15%;
+        }
+        .react-logo {
+          padding-top: 6%;
+        }
+      }
+    }
+    .project-links {
+      min-height: 100px;
+      @extend %flex-element;
+      a {
+        color: $white;
+        @extend %full-auto;
+        .home-icon, .github {
+          width: 35px;
+          height: 35px;
+          fill: $white;
+        }
+        p {
+          font-size: $base__font-size - 3;
+          line-height: 0;
+        }
+        &:hover .home-icon, &:hover .github, &:hover p {
+          color: lighten($emerald, 12%);
+          fill: $emerald;
+        }
+      }
+      .live-8 {
+        @extend %display-none;
+      }
+    }
+  }
+}
+
+.svg-close-icon {
+  top: 5px;
+  right: 5px;
+  @extend %pointer;
+  @extend %absolute;
+  @extend %block-element;
+  .close-icon {
+    width: 20px;
+    height: 22px;
+    circle {
+      fill: $white;
+    }
+    polyline {
+      fill: none;
+      stroke: $black;
+      stroke-linecap: round;
+      stroke-miterlimit: 10;
+    }
+  }
+  &:hover, &:active {
+    circle {
+      fill: $emerald;
+    }
+    polyline {
+      fill: $white;
+      stroke: $white;
+    }
+  }
+}
+
+.left-arrow,
+.right-arrow {
+  width: 35px;
+  height: 35px;
+  path {
+    fill: $white;
+    &.inner-arrow {
+      fill: $black;
+    }
+  }
+  &:hover, &:active {
+    path {
+      fill: $emerald;
+      &.inner-arrow {
+        fill: $white;
+      }
+    }
+  }
+}
+
+.svg-left-arrow,
+.svg-right-arrow {
+  bottom: 0;
+  opacity: 1;
+  bottom: 9px;
+  @extend %absolute;
+  @extend %pointer;
+  @extend %block-element;
+  &.disabled {
+    cursor: not-allowed;
+    opacity: 0.15;
+    .left-arrow,
+    .right-arrow {
+      &:hover, &:active {
+        path {
+          fill: $white;
+          &.inner-arrow {
+            fill: $black;
+          }
+        }
+      }
+    }
+  }
+}
+
+.svg-left-arrow {
+  left: 12px;
+}
+
+.svg-right-arrow {
+  right: 12px;
+}

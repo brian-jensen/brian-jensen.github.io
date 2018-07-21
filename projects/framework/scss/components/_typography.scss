@@ -1,0 +1,32 @@
+//══════════════════════════════════════
+//              TYPOGRAPHY
+//══════════════════════════════════════
+
+.container {
+  @extend %base-styles; // default Typography for the page
+}
+
+.headline {
+  @include m(primary) {
+    @extend %heading-h1;
+    @include column-spacing(em(10px),null);
+    @include row-spacing(em(-5px),em(20px));
+  }
+  @include m(secondary) {
+    font-weight: $font-weight--thin;
+  }
+}
+
+.blockquote {
+  @extend %rounded-corners;
+  @include column-spacing(em(18px), em(18px), em(12px), 0);
+  @include row-spacing(em(18px),em(48px),null);
+  line-height: em(22px);
+  font-style: italic;
+  border-left: 9px solid $color-primary;
+  font-size: em(26px);
+  @include mq(tablet) {
+    padding-left: em(25px);
+    margin-bottom: em(30px);
+  }
+}

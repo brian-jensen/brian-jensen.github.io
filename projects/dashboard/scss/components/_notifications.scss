@@ -1,0 +1,151 @@
+//══════════════════════════════════════
+//         		NOTIFCATION STYLES
+//══════════════════════════════════════
+#notification-bell {
+  @extend %pointer;
+}
+
+.modal {
+  display: none;
+  position: absolute;
+  z-index: 200;
+  right: 10px;
+  top: 50px;
+  width: 300px;
+  height: 0;
+  overflow: hidden;
+  padding-right: 20px;
+  &.clicked {
+    animation-name: animateheight;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-out;
+    height: 100%;
+    overflow: visible;
+  }
+  @include mq(landscape) {
+    right: auto;
+    top: 45px;
+  }
+  @include mq(tablet) {
+    top: 50px;
+  }
+}
+
+@keyframes animateheight {
+  from {
+    height: 0;
+    opacity: 0.6;
+  }
+  to {
+    height: 100%;
+    opacity: 1;
+  }
+}
+
+.modal-content {
+  background-color: $mulled-wine;
+  margin: 0 auto;
+  @include column-spacing(null, null, 10px);
+  border: $border--primary;
+  @extend %rounded-corners;
+  box-shadow: 1px 1px 2px $color-shadow;
+  ul {
+    @include row-spacing(null, null, 8px, 5px);
+    li {
+      @include row-spacing(5px, 5px, 5px, 2px);
+      background-color: darken($color-primary, 2%);
+      @include column-spacing(null, null, 5px);
+      border: $border--primary;
+      @extend %rounded-corners;
+      font-size: $base__font-size - 4;
+      text-align: left;
+      &:first-child {
+        margin-top: 0;
+      }
+      &:last-child {
+        margin-bottom: 0;
+      }
+      &.hidden {
+        display: none;
+      }
+      .close-notification {
+        float: right;
+        color: $silver;
+        @extend %pointer;
+        &:hover {
+          color: $white;
+        }
+      }
+    }
+    .no-notifications {
+      @extend %block-element;
+      @extend %center-text;
+      @extend %full-width;
+      font-style: italic;
+      font-size: $base__font-size - 2;
+      width: 100%;
+    }
+  }
+}
+
+.close {
+  color: $silver;
+  float: right;
+  height: 14px;
+  margin-right: -8px;
+  margin-top: 2px;
+  svg {
+    width: 12px;
+    height: 12px;
+    .close-icon-background {
+      fill: $silver;
+    }
+    &:hover {
+      .close-icon-background {
+        fill: $pastel-green;
+      }
+    }
+  }
+}
+
+.close:hover,
+.close:focus {
+  color: $white;
+  text-decoration: none;
+  @extend %pointer;
+}
+
+.alert {
+  height: 30px;
+  margin-top: 20px;
+  @extend %full-width;
+  @include column-spacing(null, null, 20px);
+  &.hidden {
+    display: none;
+  }
+  &-bar {
+    background-color: $color-primary;
+    color: $white;
+    font-size: $base__font-size - 2;
+    height: 30px;
+    line-height: 0.8;
+    letter-spacing: 1px;
+    font-weight: $font-weight--thin;
+    @extend %full-width;
+    @extend %rounded-corners;
+    @include column-spacing(null, null, 10px);
+    @include flex-container(inline-flex, space-between);
+    span {
+      margin: auto 0;
+      text-align: right;
+      font-size: 27px;
+      color: $silver;
+      @extend %block-element;
+      @extend %pointer;
+      &:hover {
+        color: $white;
+        text-shadow: 1px 1px 5px $color-shadow;
+      }
+    }
+  }
+}

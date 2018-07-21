@@ -1,0 +1,120 @@
+//══════════════════════════════════════
+//              MODAL STYLES
+//══════════════════════════════════════
+
+.modal-container {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba($dove-gray, 0.5);
+  z-index: 100;
+  .employee-modal {
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    max-width: 320px;
+    height: 400px;
+    background-color: rgba($white, 1.0);
+    z-index: 200;
+    text-align: center;
+    padding-top: 25px;
+    box-shadow: 0px 0px 10px 10px rgba($dove-gray, .5);
+    @extend %full-auto;
+    @extend %primary-border;
+    ul {
+      line-height: 0.7rem;
+      color: $dove-gray;
+    }
+    img {
+      @extend %circle;
+      max-width: 110px;
+      border: 2px solid #add8e6;
+    }
+    &-name {
+      @extend %employee-name;
+      line-height: 0.5;
+    }
+    &-email {
+      font-size: $base__font-size - 2;
+    }
+    &-cell,
+    &-dob {
+      letter-spacing: 1px;
+    }
+    &-cell {
+      font-size: $base__font-size - 1;
+    }
+    &-street,
+    &-address {
+      @extend %capitalize;
+      line-height: 0.25;
+    }
+    &-street {
+      margin-top: 25px;
+    }
+    &-address {
+      margin-bottom: 25px;
+    }
+    hr {
+      @include column-spacing(20px);
+      @include row-spacing(30px, 35px);
+      border: 0;
+      border-top: 1px solid $silver;
+    }
+  }
+}
+
+.svg-close-icon {
+  position: absolute;
+  @extend %block-element;
+  top: 5px;
+  right: 5px;
+  @extend %pointer;
+  .close-icon {
+    width: 25px;
+    height: 27px;
+    circle {
+      fill: #778899;
+    }
+    polyline {
+      fill: none;
+      stroke: $white;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-miterlimit: 10;
+    }
+  }
+  &:hover {
+    circle {
+      fill: $pastel-green;
+    }
+    polyline {
+      fill: $white;
+    }
+  }
+}
+
+.left-arrow,
+.right-arrow {
+  @extend %arrow-defaults;
+}
+
+.svg-left-arrow,
+.svg-right-arrow {
+  @extend %svg-arrow-defaults;
+  @extend %pointer;
+}
+
+.svg-left-arrow {
+  left: 18px;
+}
+
+.svg-right-arrow {
+  right: 18px;
+}

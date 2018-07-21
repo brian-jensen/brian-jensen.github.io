@@ -1,0 +1,31 @@
+//══════════════════════════════════════
+//           FOOTER STYLES
+//══════════════════════════════════════
+
+footer {
+  color: $emerald;
+  padding-bottom: 1.25rem;
+  min-height: 60px;
+  @include flex-container($dir: column);
+  @extend %background;
+  @extend %center-text;
+  h3 {
+    line-height: 2rem;
+    font-size: $base__font-size - 2;
+  }
+  ul {
+    @include flex-container($just: center);
+    @extend %full-auto;
+  }
+  li {
+    margin: auto 10px;
+  }
+  a:hover .social-icon {
+    fill: $emerald;
+  }
+  .social-icon {
+    width: 30px;
+    height: 30px;
+    fill: $white;
+  }
+}

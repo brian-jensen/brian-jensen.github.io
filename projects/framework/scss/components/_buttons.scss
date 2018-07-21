@@ -1,0 +1,36 @@
+//══════════════════════════════════════
+//    				  BUTTONS
+//══════════════════════════════════════
+@each $btn-type, $color in $ui-colors {
+  .btn--#{$btn-type} {
+    background-color: $color;
+
+    @include mq(tablet) {
+      @if $btn-type == "error" {
+        width: 165px;
+      }
+      @else if $btn-type == "warning" {
+        width: 185px;
+      }
+      @else if $btn-type == "info" {
+        width: 150px;
+      }
+      @else {
+        width: 175px;
+      }
+    }
+
+    &:hover {
+      @extend %button-inset;
+      background-color: darken($color, 12%);
+    }
+  }
+}
+
+[class*="btn--"] {
+  @extend %buttons;
+  @include mq(tablet) {
+    @include column-spacing(em(28px));
+    display: inline-block;
+  }
+}

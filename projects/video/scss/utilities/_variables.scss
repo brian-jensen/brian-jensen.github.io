@@ -1,0 +1,57 @@
+//══════════════════════════════════════
+//					 GLOBAL VARIABLES
+//══════════════════════════════════════
+
+// Font Stacks
+$font-url--google        : 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,600';
+$font-family--primary    : 'Open Sans', sans-serif, Arial;
+
+// Font Weights
+$font-weight--light      : 300;
+$font-weight--regular    : 400;
+$font-weight--bold       : 600;
+
+// Typography Defaults
+$base__font-size    : 14px;
+$base__line-height  : 26px;
+$base__letter-space : 1px;
+
+// Descriptive Base Colors
+$white  : #fff;
+$black  : #000;
+$orange : #ffa500;
+
+// Color Usage
+$color-primary   : $black;
+$color-secondary : $orange;
+$color-shadow    : rgba($black, .2);
+
+// Color Palette Modifiers
+$color-palettes: (
+	white: (
+		xx-light : lighten($white, 30%),
+		x-light  : lighten($white, 20%),
+	  light    : lighten($white, 8%),
+	  base     : $white,
+	 	dark     : darken($white, 8%),
+	 	x-dark   : darken($white, 20%),
+		xx-dark  : darken($white, 30%)
+	),
+	black: (
+		light    : lighten($black, 10%),
+		base     : $black,
+		dark     : darken($black, 10%)
+	)
+);
+
+// Grid Global variables
+$g-col-count				 : 12;
+$g-col-width				 : 50px;
+$g-gutter-width			 : 8px;
+$container-max-width : 725px;
+
+// Media Query Map
+$breakpoints: (
+  tablet  : 768px,
+  desktop : 1200px,
+);

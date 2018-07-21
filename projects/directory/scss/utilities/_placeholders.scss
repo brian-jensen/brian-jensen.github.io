@@ -1,0 +1,132 @@
+//══════════════════════════════════════
+//    				 PLACEHOLDERS
+//══════════════════════════════════════
+%base-styles {
+  font-size: $base__font-size;
+  font-family: $font-family--primary;
+  font-weight: $font-weight--thin;
+}
+
+%relative {
+  position: relative;
+}
+
+%grow {
+  flex-grow: 1;
+}
+
+%full-width {
+  width: 100%;
+}
+
+%primary-border {
+  border: $border--primary;
+  border-radius: $border--rounded-corners;
+}
+
+%no-line-height {
+  line-height: 0;
+}
+
+%pointer {
+  cursor: pointer;
+}
+
+%block-element {
+  display: block;
+}
+
+%full-auto {
+  margin: auto;
+}
+
+%capitalize {
+  text-transform: capitalize;
+}
+
+%flex-element {
+  display: flex;
+}
+
+%user-padding {
+  padding-left: 10px;
+}
+
+%inline-block-element {
+  display: inline-block;
+}
+
+%inline-flex-element {
+  display: inline-flex;
+}
+
+%center-element {
+  margin: 0 auto;
+}
+
+%center-text {
+  text-align: center;
+}
+
+%button-inset {
+  box-shadow: 0 0 3px 0 rgba($dove-gray, .8) inset;
+}
+
+%rounded-corners {
+  border-radius: $border--rounded-corners;
+}
+
+%circle {
+  border-radius: $border--circle;
+}
+
+%button-hover {
+  box-shadow: inset 3px 2px 3px darken($color-primary, 20%);
+}
+
+%employee-name {
+  color: darken($dove-gray, 18%);
+  font-weight: $font-weight--bold;
+  font-size: $base__font-size + 4;
+}
+
+%arrow-defaults {
+  width: 35px;
+  height: 35px;
+  path {
+    fill: #778899;
+    &.inner-arrow {
+      fill: $white;
+    }
+  }
+  &:hover {
+    path {
+      fill: $pastel-green;
+      &.inner-arrow {
+        fill: $white;
+      }
+    }
+  }
+}
+
+%svg-arrow-defaults {
+  position: absolute;
+  display: block;
+  bottom: 0;
+  opacity: 1;
+  &.disabled {
+    cursor: not-allowed;
+    opacity: 0.25;
+    .left-arrow,
+    .right-arrow {
+      &:hover {
+        path {
+          fill: #778899;
+          &.inner-arrow {
+            fill: $white;
+          }
+        }
+      }
+    }
+  }
+}

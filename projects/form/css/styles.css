@@ -1,0 +1,249 @@
+/**********************************
+GENERAL PRESETS & GROUPS
+***********************************/
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+  font-size: .9rem;
+  font-weight: 200;
+}
+
+body, header, fieldset {
+  margin: 0;
+}
+
+.wrapper {
+  max-width: 768px;
+  margin: 0 auto;
+}
+
+header, section, footer {
+  text-align: center;
+}
+
+h1, section h2, legend {
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+h1, button {
+  color: #fff !important;
+}
+
+form h4, label {
+  color: #495d70;
+}
+
+fieldset, ul {
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+button, label:hover {
+  cursor: pointer;
+}
+
+.contact-info, .newsletter {
+  padding-bottom: 30px;
+}
+
+select, button, textarea, .contact-info input {
+  width: 100%;
+  height: 50px;
+  padding: 15px;
+  color: #777;
+  border: none;
+  border-radius: 5px;
+  background-color: #eff0f1;
+  font-size: 1rem;
+}
+
+legend, section h2 {
+  color: #2d3945;
+}
+
+section p, footer {
+  color: #aaafb4;
+}
+
+input[type="checkbox"], input[type="radio"] {
+  position: relative;
+  top: -2px;
+  margin: 0 10px 15px 0;
+}
+
+input::placeholder, textarea::placeholder, footer p {
+  font-size: .75rem;
+  font-weight: 100;
+  font-style: italic;
+}
+
+input[placeholder="Required"]::placeholder {
+  text-align: right;
+}
+
+
+/**********************************
+HEADER
+***********************************/
+
+header {
+  padding: 10px;
+  background-color: #2d3945;
+}
+
+h1 {
+  text-transform: uppercase;
+}
+
+
+/**********************************
+INTRO HEADING
+***********************************/
+
+main {
+  padding: 0 15px;
+  background-color: #fafcff;
+}
+
+section {
+  padding: 15px 0 20px;
+  border-bottom: 4px solid #2d3945;
+}
+
+section h2 {
+  line-height: .9rem;
+}
+
+
+/**********************************
+MAIN FORM ELEMENTS
+***********************************/
+
+form {
+  margin-top: 3px;
+  padding-top: 25px;
+  border-top: 2px solid #2d3945;
+}
+
+fieldset {
+  border: 0;
+}
+
+form h4 {
+  font-weight: 300;
+}
+
+select {
+  font-size: .75rem !important;
+  font-weight: 100 !important;
+}
+
+textarea {
+  min-height: 100px;
+  margin-top: 20px;
+  resize: none;
+  transition: min-height 1.5s, background-color 1.2s, box-shadow .8s;
+}
+
+textarea:focus {
+  min-height: 200px;
+  transition: min-height 1s, background-color .6s, box-shadow .4s;
+  background-color: #fff;
+  box-shadow: 0 0 4px rgba(45, 57, 69, .5);
+}
+
+input {
+  transition: background-color 2s, box-shadow 1.5s;
+}
+
+input:focus {
+  transition: background-color 1.5s, box-shadow 1s;
+  background-color: #fff;
+  box-shadow: 0 0 4px rgba(45, 57, 69, .5);
+  font-weight: 200;
+}
+
+button {
+  height: 60px;
+  margin-top: 30px;
+  background-color: #4ebbb5;
+  font-size: 1rem;
+}
+
+button:hover {
+  transition: all .3s;
+  background-color: #3e9590;
+  box-shadow: inset 0 0 3px #0f2524;
+}
+
+
+/**********************************
+CONTACT INFO FIELDSET
+***********************************/
+
+.contact-info legend {
+  margin-bottom: 5px;
+}
+
+.contact-info {
+  border-bottom: 2px solid #2d3945;
+}
+
+.contact-info label {
+  display: block;
+  margin-top: 10px;
+  padding: 10px 0;
+}
+
+input[name="zip"] {
+  width: 50%;
+}
+
+
+/**********************************
+NEWSLETTER FIELDSET
+***********************************/
+
+.newsletter {
+  margin-top: 25px;
+}
+
+
+/**********************************
+TABLET VIEW MEDIA QUERIES
+***********************************/
+
+@media (min-width: 768px) {
+  main {
+    padding: 0 84px;
+  }
+  .contact-info li {
+    display: flex;
+    margin: 20px 0;
+  }
+  .contact-info label {
+    flex-basis: 35%;
+    margin: auto 0;
+  }
+  .contact-info input[name="zip"] {
+    width: 25%;
+  }
+  .contact-info label[for="zip"] {
+    flex-basis: 25.5%;
+  }
+  .newsletter {
+    margin-top: 50px;
+  }
+}

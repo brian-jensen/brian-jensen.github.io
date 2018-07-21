@@ -1,0 +1,21 @@
+//══════════════════════════════════════
+//         FLEXBOX GRID SYSTEM
+//══════════════════════════════════════
+
+.container {
+  @include block-centered(block);
+  min-width: $container-min-width;
+  max-width: $container-max-width;
+  background-color: $white;
+}
+
+.grid__row {
+  @include flex-container(flex, space-between, wrap);
+}
+
+.grid__col {
+  @include mq(tablet) {
+    @include g-columns;
+  }
+}
+

@@ -1,0 +1,30 @@
+//══════════════════════════════════════
+//           DEFUALT STYLES
+//══════════════════════════════════════
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	background-image: url("../images/dust_scratches.png");
+}
+
+a {
+	text-decoration: none;
+}
+
+ul {
+	list-style: none;
+	padding: 0;
+}
+
+sup {
+	left: -0.4em;
+}
+
+section {
+	@include mq(tablet) {
+		margin-left: 75px;
+	}
+}
