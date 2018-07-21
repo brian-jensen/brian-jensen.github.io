@@ -45,7 +45,7 @@ function buildPortfolio(item) {
       const title = item[index].title;
       const project = item[index].project;
       portfolio.innerHTML += `
-          <div class="item item-${index}">
+          <div class="item item-${index}" onclick="void(0)">
           <div class="overlay">
             <p class="project">${project}</p>
             <H3>${title}</H3>
